@@ -1,57 +1,122 @@
 <?php
 class Dataset{
     private $dataId;
+    private $cust;
     private $dcc;
     private $dataDesc;
     private $dac;
     private $attr;
 
-    function __init__($arg1, $arg2, $arg3, $arg4, $arg5){
-        $dataId = $arg1;
-        $dcc = $arg2;
-        $dataDesc = $arg3;
-        $dac = $arg4;
-
+    /*
+    Description:
+    Input:
+    Output:
+    */
+    function __construct($arg1, $arg2, $arg3, $arg4, $arg5, $arg6){
+        $this->dataId = $arg1;
+        $this->cust = $arg2;
+        $this->dcc = $arg3;
+        $this->dataDesc = $arg4;
+        $this->dac = $arg5;
+		$this->attr = $arg6;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setDataId($arg1){
-        $dataId = $arg1;
+        if(is_int($arg1) != true){
+            return "Entered value is not an integer";
+        }
+        elseif($arg1<0){
+            return "Entered value is not a natural number";
+        }
+        else{
+            $this->dataId = $arg1;
+        }
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getDataId(){
-        return $dataId;
+        return $this->dataId;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setDcc($arg1){
-        $dcc = $arg1;
+        $this->dcc = $arg1;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getDcc(){
-        return $dcc;
+        return $this->dcc;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setDataDesc($arg1){
-        $dataDesc = $arg1;
+        $this->dataDesc = $arg1;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getDataDesc(){
-        return $dataDesc;
+        return $this->dataDesc;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setDac($arg1){
-        $dac = $arg1;
+        $this->dac = $arg1;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getDac(){
-        return $dac;
+        return $this->dac;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setAttr($arg1){
-        $attr = $arg1;
+        $this->attr = $arg1;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getAttr(){
-        return $attr;
+        return $this->attr;
     }
 }
 
