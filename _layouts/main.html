@@ -1,0 +1,153 @@
+---
+layout: default
+---
+
+<div class = "container" style="margin-left: 5vw; margin-right: 5vw">
+    <div class=info>
+        <h1>Open Data</h1>
+        <p>
+            Open Data is available for everyone to use and download. 
+            If you would like to submit a new data set or update an existing one click 
+            on the link below.
+        </p>
+        <div class = "row" style="margin-bottom: 1vh;">
+            <div class = "col">
+                <a class = "Data_Options" href = "">
+                    Submit
+                </a>
+            </div>
+            <div class = "col">
+                <a class = "Data_Options" href ="">
+                    Update
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col">
+            <div class = "form-group">
+                <label for="searchBar" style="font-size: 2vh;">Search</label>
+                <input type="search" class="form-control" id="searchBar" aria-describedby="Search">
+                <input type="button" value = "Search" onclick = "searchBar()">
+            </div>
+        </div>
+    </div>
+    <div class = "row" >
+        <div class="col-4">
+            <p style="font-size: 2vh;">Filters</p> 
+            <div class = "row">
+                <div class="col">
+                    <p style="font-size: 1.5vh;">Topics</p> 
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="AgrCheck">
+                        <label class="form-check-label" for="AgrCheck">Agriculture</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="GovCheck">
+                        <label class="form-check-label" for="GovCheck">Government</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="MapCheck">
+                        <label class="form-check-label" for="MapCheck">Maps</label>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col">
+                    <p style="font-size: 1.5vh; border-bottom: 1px solid black;">Publisher</p> 
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="CounCheck">
+                        <label class="form-check-label" for="CounCheck">Council</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="PlanCheck">
+                        <label class="form-check-label" for="PlanCheck">Planner</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="ITCheck">
+                        <label class="form-check-label" for="ITCheck">IT</label>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col">
+                    <p style="font-size: 1.5vh; border-bottom: 1px solid black;">Update Frequency</p> 
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="AnnCheck">
+                        <label class="form-check-label" for="AnnCheck">Annually</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id=BiannCheck">
+                        <label class="form-check-label" for="BiannCheck">Biannually</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="MonCheck">
+                        <label class="form-check-label" for="MonCheck">Monthly</label>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col">
+                    <p style="font-size: 1.5vh; border-bottom: 1px solid black;">Format</p> 
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="CSVCheck">
+                        <label class="form-check-label" for="CSVCheck">CSV</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="XLSCheck">
+                        <label class="form-check-label" for="XLSCheck">XLS</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="JSONCheck">
+                        <label class="form-check-label" for="JSONCheck">JSON</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" id = "dataPreview">
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col" style="border: 1px solid black; height: 12vh; border-radius: 4px; margin: .5vh;">
+                    <p style="font-size: 1.5vh;">A Data Set</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

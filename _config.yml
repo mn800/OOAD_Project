@@ -1,0 +1,6 @@
+title: WindsorWebsite
+baseurl: "https://mn800.github.io"
+url: "/OOAD_Project"
+
+sass:
+  style: compact
