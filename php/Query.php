@@ -57,8 +57,8 @@ class Query {
     Input:
     Output:
     */
-    function getDataSet($DaId){
-        $query = sprintf("SELECT * FROM DataSource WHERE 'DataID' = %s;",$DaId);
+    function getDataSet($DataId){
+        $query = sprintf("SELECT * FROM DataSource WHERE DataID = %s;",$DataId);
         $result = $this->connection->query($query);
         $row = $result->fetch_assoc();
         $dataset = new Dataset($row['DataID'],$row['DataName'],$row['Custodian'],$row['DCC'],$row['DD'],$row['DAC'],$row['Attr']);
