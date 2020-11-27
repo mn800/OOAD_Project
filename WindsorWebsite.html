@@ -7,16 +7,21 @@
 <html>
     <head>
         <title>Windsor Open Data</title>
-        <link rel="icon" href = "Windsor_Icon.png">
+        <link rel="icon" href = "images/Windsor_Icon.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css">
-        <script src = "searchBar.js"></script>
+        <script src = "php/JSListener.php" type = "text/php"></script>
+        <script src = "js/QueryPhp.js" type = "text/javascript"></script>
+        <script src = "js/searchBar.js" type = "text/javascript"></script>
+        <script src = "js/FilterSearch.js" type = "text/javascript"></script>
+        <script src = "js/jsController.js" type = "text/javascript"></script>
+
     </head>
 
     <body>
         <nav class="navbar navbar-light" style="background-color: rgb(26,47,57)">
             <a class="imageNav" href="">
-                <img src = "Windsor_Logo.png" style="height:50px">    
+                <img src = "images/Windsor_Logo.png" style="height:50px">    
             </a>
         </nav>
         <div class = "container">
@@ -53,7 +58,7 @@
                                 <input type="search" class="form-control" id="searchBar" aria-describedby="Search">
                             </div>
                             <div class = "col">
-                                <input type = "button" value = "Search" style = "height: 100%;"  onclick="searchBar()">
+                                <input type = "button" value = "Search" style = "height: 100%;"  onclick="doAction('Search')">
                             </div>
                         </div>
                     </div>
@@ -67,15 +72,15 @@
                         <div class="col">
                             <p style="font-size: 12pt;">Topics</p> 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="AgrCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="AgrCheck" onclick="doAction(['checkbox', 'AgrCheck'])">
                                 <label class="form-check-label" for="AgrCheck">Agriculture</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="GovCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="GovCheck" onclick="doAction(['checkbox', 'GovCheck'])">
                                 <label class="form-check-label" for="GovCheck">Government</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="MapCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="MapCheck" onclick="doAction(['checkbox', 'MapCheck'])">
                                 <label class="form-check-label" for="MapCheck">Maps</label>
                             </div>
                         </div>
@@ -84,15 +89,15 @@
                         <div class="col">
                             <p style="font-size: 12pt; border-bottom: 1px solid black;">Publisher</p> 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="CounCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="CounCheck" onclick="doAction(['checkbox', 'CounCheck'])">
                                 <label class="form-check-label" for="CounCheck">Council</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="PlanCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="PlanCheck" onclick="doAction(['checkbox', 'PlanCheck'])">
                                 <label class="form-check-label" for="PlanCheck">Planner</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="ITCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="ITCheck" onclick="doAction(['checkbox', 'ITCheck'])">
                                 <label class="form-check-label" for="ITCheck">IT</label>
                             </div>
                         </div>
@@ -101,15 +106,15 @@
                         <div class="col">
                             <p style="font-size: 12pt; border-bottom: 1px solid black;">Update Frequency</p> 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="AnnCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="AnnCheck" onclick="doAction(['checkbox', 'AnnCheck'])">
                                 <label class="form-check-label" for="AnnCheck">Annually</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id=BiannCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="BiannCheck" onclick="doAction(['checkbox', 'BiannCheck'])">
                                 <label class="form-check-label" for="BiannCheck">Biannually</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="MonCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="MonCheck" onclick="doAction(['checkbox', 'MonCheck'])">
                                 <label class="form-check-label" for="MonCheck">Monthly</label>
                             </div>
                         </div>
@@ -118,15 +123,15 @@
                         <div class="col">
                             <p style="font-size: 12pt; border-bottom: 1px solid black;">Format</p> 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="CSVCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="CSVCheck" onclick="doAction(['checkbox', 'CSVCheck'])">
                                 <label class="form-check-label" for="CSVCheck">CSV</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="XLSCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="XLSCheck" onclick="doAction(['checkbox', 'XLSCheck'])">
                                 <label class="form-check-label" for="XLSCheck">XLS</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="JSONCheck">
+                                <input class="form-check-input" type="checkbox" value="" id="JSONCheck" onclick="doAction(['checkbox', 'JSONCheck'])">
                                 <label class="form-check-label" for="JSONCheck">JSON</label>
                             </div>
                         </div>

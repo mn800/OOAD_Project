@@ -1,6 +1,7 @@
 <?php
 class Dataset{
     private $dataId;
+    private $dataName;
     private $cust;
     private $dcc;
     private $dataDesc;
@@ -12,13 +13,14 @@ class Dataset{
     Input:
     Output:
     */
-    function __construct($arg1, $arg2, $arg3, $arg4, $arg5, $arg6){
+    function __construct($arg1, $arg2, $arg3, $arg4, $arg5, $arg6, $arg7){
         $this->dataId = $arg1;
-        $this->cust = $arg2;
-        $this->dcc = $arg3;
-        $this->dataDesc = $arg4;
-        $this->dac = $arg5;
-		$this->attr = $arg6;
+        $this->dataName = $arg2;
+        $this->cust = $arg3;
+        $this->dcc = $arg4;
+        $this->dataDesc = $arg5;
+        $this->dac = $arg6;
+		$this->attr = $arg7;
     }
 
     /*
@@ -47,6 +49,22 @@ class Dataset{
         return $this->dataId;
     }
 
+    function setDataName($arg2){
+        $this->dataName = $arg2;
+    }
+
+    function getDataName(){
+        return $this->dataName;
+    }
+    
+    function setCust($arg){
+        $this->cust = $arg;
+    }
+
+    function getCust(){
+        return $this->cust;
+    }
+    
     /*
     Description:
     Input:
