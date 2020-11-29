@@ -9,6 +9,9 @@ function doAction(value){
             //alert("Searching")
             search.search();
         }
+        else if(value == 'load'){
+            QueryPhp.loadPage();
+        }
 
     }
     else{
@@ -18,6 +21,7 @@ function doAction(value){
             }
             else{
                 filters.removeFilter(value[1])
+
             }
         }
         else if(value[0] == "dataset"){

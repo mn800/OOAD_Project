@@ -7,11 +7,10 @@ require_once ('DataPageCreator.php');
 $params = $_POST;
 $JSONcon = new JSONConverter();
 $Querier = new Query();
-$PageCreator = new DataPageCreator("/datasetpages/");
+$PageCreator = new DataPageCreator("../datasetpages/");
 
-if(array_key_exists('Get Starting Datasets', $params)){
-    printf("You are accessing JSListener\n");
-    //printf("%s",json_encode($Querier->getFirstDataSets()));
+if(array_key_exists('Load', $params)){
+    printf("%s",json_encode($JSONcon->toJSON($Querier->getFirstDataSets($params))));
 }
 
 elseif(array_key_exists('Filtered_Search', $params)){
@@ -30,6 +29,10 @@ elseif(array_key_exists('DatasetPage', $params)){
     else{
         printf("false");
     }
+}
+
+elseif(array_key_exists('Search', $params)){
+    printf("%s", json_encode($JSONcon->toJSON($Querier->getFilteredDataSets($params['p1']))));
 }
 
 ?>
