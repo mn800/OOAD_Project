@@ -30,13 +30,14 @@ class Dataset{
     */
     function setDataId($arg1){
         if(is_int($arg1) != true){
-            return "Entered value is not an integer";
+            return false;
         }
         elseif($arg1<0){
-            return "Entered value is not a natural number";
+            return false;
         }
         else{
             $this->dataId = $arg1;
+            return true;
         }
     }
 
@@ -49,18 +50,38 @@ class Dataset{
         return $this->dataId;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setDataName($arg2){
         $this->dataName = $arg2;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getDataName(){
         return $this->dataName;
     }
     
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function setCust($arg){
         $this->cust = $arg;
     }
 
+    /*
+    Description:
+    Input:
+    Output:
+    */
     function getCust(){
         return $this->cust;
     }

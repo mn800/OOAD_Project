@@ -32,8 +32,10 @@ class Query {
     function getFilteredDataSets($filters){
         $datasets = array();
         $DataIDs = array();
+        $numOfFilters = 0;
         // Gets the DataIDs of all datasets with the filter
         foreach($filters as $filter => $value){
+            $numOfFilters++;
             $query = sprintf("SELECT DataID FROM Categories WHERE CatName = '%s';",$value);
             $result = $this->connection->query($query);
             while($row = $result->fetch_assoc()){
@@ -41,10 +43,22 @@ class Query {
             }
         }
 
-        // Removes duplicate dataIds
-        $DataIDs = array_unique($DataIDs);
+        // Only takes DataIds that are applicable for all filters
+        $ValidIDs = array();
+        for($i = 0; $i < count($DataIDs)-1; $i++){
+            $count = 1;
+            for($j = $i+1; $j < count($DataIDs); $j++){
+                if($DataIDs[$i] == $DataIDs[$j]){
+                    $count += 1;
+                }
+            }
+            if($count == $numOfFilters){
+                array_push($ValidIDs, $DataIDs[$i]);
+            }
+        }
+
         // Gets the information for all datasets
-        foreach($DataIDs as $dataID){
+        foreach($ValidIDs as $dataID){
             $query = sprintf("SELECT * FROM DataSource WHERE DataID = %d;",$dataID);
             $result = $this->connection->query($query);
             while($row = $result->fetch_assoc()){
@@ -75,7 +89,7 @@ class Query {
     */
     function getSearchedDataSets($searchParam){
         $datasets = array();
-        $query = sprintf("SELECT * FROM DataSource WHERE DataName LIKE '%%s%' OR DD LIKE '%%s%';",$searchParam,$searchParam);
+        $query = sprintf("SELECT * FROM DataSource WHERE DataName LIKE '%%%s%%' OR DD LIKE '%%%s%%';",$searchParam,$searchParam);
         $result = $this->connection->query($query);
         while($row = $result->fetch_assoc()){
             array_push($datasets, new Dataset($row['DataID'],$row['DataName'],$row['Custodian'],$row['DCC'],$row['DD'],$row['DAC'],$row['Attr']));

@@ -6,7 +6,6 @@ function doAction(value){
 
     if(!Array.isArray(value)){
         if(value == "Search"){
-            //alert("Searching")
             search.search();
         }
         else if(value == 'load'){
