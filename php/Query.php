@@ -45,7 +45,7 @@ class Query {
 
         // Only takes DataIds that are applicable for all filters
         $ValidIDs = array();
-        for($i = 0; $i < count($DataIDs)-1; $i++){
+        for($i = 0; $i < count($DataIDs); $i++){
             $count = 1;
             for($j = $i+1; $j < count($DataIDs); $j++){
                 if($DataIDs[$i] == $DataIDs[$j]){

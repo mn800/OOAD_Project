@@ -6,6 +6,7 @@ function doAction(value){
 
     if(!Array.isArray(value)){
         if(value == "Search"){
+            filters.removeAllFilters();
             search.search();
         }
         else if(value == 'load'){
